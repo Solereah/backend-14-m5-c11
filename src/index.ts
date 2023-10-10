@@ -1,4 +1,5 @@
 import express, { json } from "express"
+import { Request, Response } from "express"
 import userRouter from "./routes/user-router"
 import chartRouter from "./routes/chart-router"
 
@@ -11,13 +12,20 @@ app.use(json())
 app.use("/api/charts", chartRouter)
 app.use("/api/users", userRouter)
 
-app.use("/api", (req, res) => {
+app.get("/api", (req: Request, res: Response) => {
   res.status(200).json({
     name: "API REST - ASTRO DB",
     version: "1.0.0",
     server: "running",
   })
-}) // ------------------ SERVER ------------------ //
+})
+
+app.use("*", (req: Request, res: Response) => {
+  res.status(404).json({
+    message: "Resource not found",
+  })
+})
+// ------------------ SERVER ------------------ //
 app.listen(PORT, () => {
   console.log("Server running on port", PORT)
 })
