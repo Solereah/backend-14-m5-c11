@@ -5,17 +5,19 @@ import chartRouter from "./routes/chart-router"
 const PORT = 43000
 const app = express()
 
+// ------------------ MIDDLEWARES ------------------ //
 app.use(json())
+// ------------------ ROUTERS ------------------ //
+app.use("/api/charts", chartRouter)
+app.use("/api/users", userRouter)
 
-app.get("/api/charts", chartRouter)
-app.get("/api/users", userRouter)
 app.use("/api", (req, res) => {
-  res.json({
+  res.status(200).json({
     name: "API REST - ASTRO DB",
     version: "1.0.0",
     server: "running",
   })
-})
+}) // ------------------ SERVER ------------------ //
 app.listen(PORT, () => {
   console.log("Server running on port", PORT)
 })

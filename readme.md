@@ -22,21 +22,21 @@ Desarrollar una API REST que permita interactuar con un sistema de registro de d
 
 Pueden armar la estructura de carpetas del proyecto de esta forma:
 
--   src/
+- src/
 
-    -   controllers
-        -   user-controller.ts
-        -   chart-controller.ts
-    -   database
-        -   users.json
-        -   charts.json
-    -   models
-        -   user-model.ts
-        -   chart-model.ts
-    -   routes
-        -   chart-router.ts
-        -   user-router.ts
-    -   index.ts
+  - controllers
+    - user-controller.ts
+    - chart-controller.ts
+  - database
+    - users.json
+    - charts.json
+  - models
+    - user-model.ts
+    - chart-model.ts
+  - routes
+    - chart-router.ts
+    - user-router.ts
+  - index.ts
 
 **charts.json** es una collection cuyos objetos tienen la forma:
 
@@ -65,8 +65,8 @@ Pueden armar la estructura de carpetas del proyecto de esta forma:
 
 1. Crear la estructura de carpetas
 2. Instalar y configurar las dependencias necesarias
-    - Iniciar el proyecto con NPM
-    - Instalar dependencias de desarrollo y principales
+   - Iniciar el proyecto con NPM
+   - Instalar dependencias de desarrollo y principales
 3. Iniciar el repo de git y hacer el primer commit
 4. Desarrollar el endpoint para obtener la info general de la API.
 5. Configurar los scripts, testearlos y hacer el deploy a Render (crear un nuevo servicio WEB).
